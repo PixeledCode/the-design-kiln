@@ -11,9 +11,9 @@ const Index = (props) => {
   console.log(props)
     const { posts = [] } = props
     return (
-      <div className="projects uk-section uk-container uk-container-large">
+      <div className="projects uk-section uk-container uk-container-medium">
         {posts.map(
-          ({ _id, title = '', slug = '', _updatedAt = '', mainImage = '' }) =>
+          ({ _id, slug = '', mainImage = '' }) =>
             slug && (
               <li key={_id}>
                 <Link href="/post/[slug]" as={`/post/${slug.current}`}>     
