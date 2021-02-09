@@ -19,12 +19,14 @@
   font-family: 'Manrope';
   src: url('../../public/fonts/manrope.ttf') format("truetype-variations");
   font-weight: 1 999;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Samarkan';
   src: url('../../public/fonts/samarkan.TTF') format("truetype");
   font-weight: 400;
+  font-display: swap;
 }
 
 html {
@@ -143,19 +145,23 @@ div.navLinks ul {
 .projects img {
   height: 40vh;
   flex-grow: 1;
-  margin: .5rem;
+}
+
+.projects a {
   box-shadow: 0 10px 20px rgba(249, 129, 42, 0.19),
   0 6px 6px rgba(249, 129, 42, 0.23);
   transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
+  margin: .5rem;
+  max-width: 500px;
 }
 
-.projects img:hover {
+.projects a:hover {
   box-shadow: 0 14px 28px rgba(249, 129, 42, 0.25),
     0 10px 10px rgba(249, 129, 42, 0.22);
     transform: scale(1.01);
 }
 
-.projects img:last-child {
+/* .projects img:last-child {
   flex-grow: 10;
 }
 
@@ -169,7 +175,7 @@ div.navLinks ul {
   .projects img {
     height: 80vh;
   }
-}
+} */
 
 
 @media (max-aspect-ratio: 1/1) and (max-width: 480px) {
@@ -187,58 +193,6 @@ div.navLinks ul {
     max-height: 75vh;
     min-width: 0;
   }
-}
-
-
-/* Homepage Cards Design and Effects */
-.card {
-  margin: .5rem;
-  position: relative;
-}
-
-.card img {
-  max-height: 100%;
-  min-width: 100%;
-  object-fit: cover;
-  vertical-align: bottom;
-  transition: all 0.5s ease;
-}
-
-.card img:hover {
-  opacity: 1;
-  transition: opacity 0.25s cubic-bezier(0.39, 0.575, 0.565, 1);
-}
-
-.card-title {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(249, 129, 42, 0.4);
-  color: #fff;
-  visibility: hidden;
-  opacity: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: opacity .2s, visibility .2s;
-}
-
-.card:hover .card-title {
-  visibility: visible;
-  opacity: 1;
-}
-
-.card-title-description {
-  text-align: center;
-  font-size: 1.5rem;
-  transition: .2s;
-  transform: translateY(1em);
-}
-
-.card:hover .card-title-description {
-  transform: translateY(0);
 }
 
 /* footer */
@@ -265,8 +219,14 @@ div.navLinks ul {
   display: grid;
 }
 
-.mainImage {
+.article img {
   justify-self: center;
+  max-height: 50vh;
+}
+
+.mainImage {
+  display: flex;
+  justify-content: center;
 }
 
 .postHeader {

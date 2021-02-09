@@ -14,17 +14,16 @@ const MyApp = ({ Component, pageProps, router  }) => {
         <link rel="icon" type="image/png" sizes="16x16" href="https://gruhamstudio.com/favicon/favicon-16x16.png" />
         <link rel="icon" type="image/x-icon" href="https://gruhamstudio.com/favicon/favicon.ico" />
         <link rel="manifest" href="https://gruhamstudio.com/favicon/site.webmanifest" />
-        <link href="/fonts/manrope.ttf" rel="stylesheet" />
-        <link href="/fonts/samarkan.ttf" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js" />
       </Head>
-      <Layout />
+      <Layout >
       <Seo seo={pageProps}/>
         <motion.div initial="pageInitial" animate="pageAnimate"  key={router.route}
         variants={{pageInitial: {opacity: 0},pageAnimate: {opacity: 1},}}>
         <Component {...pageProps} />
-        </motion.div>
+      </motion.div>
+      </ Layout >
     </>
   );
 };

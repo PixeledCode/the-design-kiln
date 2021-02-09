@@ -2,7 +2,7 @@ import groq from 'groq'
 import BlockContent from '@sanity/block-content-to-react'
 import client from '../../client'
 import Carousel from '../../components/carousel'
-import Image from '../../components/image'
+import Images from '../../components/images'
 
 const Post = (props) => {
   const {
@@ -18,16 +18,12 @@ const Post = (props) => {
   return (
       <div className="article">
         <div className="uk-section uk-container uk-container-xsmall">
+          <div className={'mainImage'}>
           {carousel.length > 0 ?
             <Carousel props={carousel} />
-            : <img className="mainImage"
-                src={Image(mainImage)
-                    .height(500)
-                    .format('jpg')
-                    .auto('format')
-                    .url()}
-              />
+            : <Images url={mainImage} />
           }
+          </div>
           <h1 className="title">{title}</h1>
           <div className="postHeader">
             {`${category} | ${location}`}

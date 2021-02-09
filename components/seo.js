@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from './image'
+import Images from './images'
 
 const image = (img) => {
   const img1 = (<img
@@ -16,7 +16,7 @@ const Seo = ({ seo }) => {
   console.log(seo)
   const fullSeo = {
     metaTitle: seo.title == undefined ? `Gruham Studio | Design & Architecture` : `${seo.title} | Gruham Studio` ,
-    shareImage: seo.mainImage ? image(seo.mainImage) : 'https://gruhamstudio.com/icon.png',
+    shareImage: seo.mainImage ? Images(seo.mainImage) : 'https://gruhamstudio.com/icon.png',
     metaDescription: seo.body ? seo.body[0].children[0].text.substring(0,120) 
     : 'Gruham Studio is a Design Studio Offering Design Consultancy For Architecture, Urban Design, Interior, Landscape Design And Land Development'
   }
@@ -44,7 +44,7 @@ const Seo = ({ seo }) => {
           <meta name="image" content={fullSeo.shareImage} key={'twitterimage'}/>
         </>
       )}
-      {fullSeo.article && <meta property="og:type" content="article" key={'ogarticle'}/>}
+      {seo.authorImage && <meta property="og:type" content="article" key={'ogarticle'}/>}
       <meta name="twitter:card" content="summary_large_image" key={'twittercard'}/>
     </Head>
   );

@@ -5,7 +5,6 @@ import Seo from "../components/seo";
 
 const Index = (props) => {
     const {
-    title = 'Missing title',
     body = []
   } = props.posts
   return (
@@ -19,7 +18,6 @@ const Index = (props) => {
         {...client.config()}
       />
           <hr className="uk-divider-small" />
-          
           <iframe width="400" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
                 id="gmap_canvas"
                 src="https://www.google.com/maps/d/u/0/embed?mid=1WSMIgl-6neXglElOlcdTdsQrjKXFSDx7"></iframe>
