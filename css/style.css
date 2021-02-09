@@ -46,12 +46,6 @@ h4 {
   font-family: 'Indie Flower', serif;
 }
 
-#__next {
-  height: 99vh;
-  display: grid;
-  grid-template-rows: auto auto 1fr;
-}
-
 /* logo */
 .logo {
   margin-top: 5rem;
@@ -64,10 +58,26 @@ h4 {
   cursor: pointer;
 }
 
+@media screen and (max-width: 800px) {
+  .logo {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .logo {
+    width: 300px;
+  }
+}
+
 /* Navbar */
 #__next .uk-navbar-container {
   background: #fff;
   font-weight: 200;
+}
+
+#__next .uk-navbar-container .uk-container {
+  max-width: max-content;
 }
 
 div.navLinks a {
@@ -80,8 +90,13 @@ div.navLinks a {
   transition: all 0.3s ease;
 }
 
+@media screen and (min-width: 550px) and (max-width: 800px) {
+  div.navLinks a {
+    font-size: 1.5rem;
+  }
+}
+
 div.navLinks a:hover {
-  /* font-weight: 500; */
   color: rgba(249, 128, 42, 0.5);
 }
 
@@ -231,6 +246,14 @@ div.navLinks ul {
 .uk-slider-items .uk-panel {
   display: flex;
   justify-content: center;
+}
+
+.article .uk-section {
+  display: grid;
+}
+
+.mainImage {
+  justify-self: center;
 }
 
 .postHeader {

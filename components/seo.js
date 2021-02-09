@@ -1,47 +1,52 @@
 import Head from "next/head";
-import { useContext } from "react";
-import { GlobalContext } from "../pages/_app";
-import { getStrapiMedia } from "../lib/media";
+import Image from './image'
+import BlockContent from '@sanity/block-content-to-react'
+import client from '../client'
+
+const image = (img) => {
+  return (
+    <img
+      src={Image(img)
+          .height(500)
+          .format('jpg')
+          .auto('format')
+          .url()}
+    />
+  )
+}
 
 const Seo = ({ seo }) => {
-  const { defaultSeo, siteName } = useContext(GlobalContext);
-  const seoWithDefaults = {
-    ...defaultSeo,
-    ...seo,
-  };
   const fullSeo = {
-    ...seoWithDefaults,
-    // Add title suffix
-    metaTitle: `${seoWithDefaults.metaTitle} | ${siteName}`,
-    // Get full image URL
-    shareImage: getStrapiMedia(seoWithDefaults.shareImage),
+    metaTitle: seo.title == undefined ? `Gruham Studio | Design & Architecture` : `${seo.title} | Gruham Studio` ,
+    shareImage: image(seo.mainImage),
+    metaDescription: seo.body[0].children[0].text.substring(0,120)
   };
-
+  console.log(fullSeo.metaDescription)
   return (
     <Head>
       {fullSeo.metaTitle && (
         <>
-          <title>{fullSeo.metaTitle}</title>
-          <meta property="og:title" content={fullSeo.metaTitle} />
-          <meta name="twitter:title" content={fullSeo.metaTitle} />
+          <title key={'title'}>{fullSeo.metaTitle}</title>
+          <meta property="og:title" content={fullSeo.metaTitle} key={'ogtitle'}/>
+          <meta name="twitter:title" content={fullSeo.metaTitle} key={'twttertitle'}/>
         </>
       )}
       {fullSeo.metaDescription && (
         <>
-          <meta name="description" content={fullSeo.metaDescription} />
-          <meta property="og:description" content={fullSeo.metaDescription} />
-          <meta name="twitter:description" content={fullSeo.metaDescription} />
+          <meta name="description" content={fullSeo.metaDescription} key={'descrip'}/>
+          <meta property="og:description" content={fullSeo.metaDescription} key={'ogdescrip'}/>
+          <meta name="twitter:description" content={fullSeo.metaDescription} key={'twitterdescrip'}/>
         </>
       )}
       {fullSeo.shareImage && (
         <>
-          <meta property="og:image" content={fullSeo.shareImage} />
-          <meta name="twitter:image" content={fullSeo.shareImage} />
-          <meta name="image" content={fullSeo.shareImage} />
+          <meta property="og:image" content={fullSeo.shareImage.props.src} key={'image'}/>
+          <meta name="twitter:image" content={fullSeo.shareImage.props.src} key={'ogimage'}/>
+          <meta name="image" content={fullSeo.shareImage.props.src} key={'twitterimage'}/>
         </>
       )}
-      {fullSeo.article && <meta property="og:type" content="article" />}
-      <meta name="twitter:card" content="summary_large_image" />
+      {fullSeo.article && <meta property="og:type" content="article" key={'ogarticle'}/>}
+      <meta name="twitter:card" content="summary_large_image" key={'twittercard'}/>
     </Head>
   );
 };

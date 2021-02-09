@@ -2,6 +2,7 @@ import groq from 'groq'
 import client from '../client'
 import Footer from '../components/footer'
 import BlockContent from '@sanity/block-content-to-react'
+import Seo from "../components/seo";
 
 const Index = (props) => {
     const {
@@ -10,6 +11,7 @@ const Index = (props) => {
   return (
     <>
     <article>
+      <Seo seo={props.posts}/>
       <div className="uk-section">
         <div className="uk-container uk-container-xsmall">
           <BlockContent
@@ -28,7 +30,7 @@ const Index = (props) => {
 
 Index.getInitialProps = async () => ({
     posts: await client.fetch(groq`
-      *[_type == "single" && title == "About Us"][0]
+      *[_type == "single" && title == "About"][0]
     `)
 })
 

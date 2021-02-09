@@ -1,14 +1,9 @@
 import Link from 'next/link'
 import groq from 'groq'
 import client from '../client'
-import imageUrlBuilder from '@sanity/image-url'
-
-function urlFor (source) {
-  return imageUrlBuilder(client).image(source)
-}
+import Image from '../components/image'
 
 const Index = (props) => {
-  console.log(props)
     const { posts = [] } = props
     return (
       <div className="projects uk-section uk-container uk-container-medium">
@@ -17,12 +12,16 @@ const Index = (props) => {
             slug && (
               <li key={_id}>
                 <Link href="/post/[slug]" as={`/post/${slug.current}`}>     
-
-                  <a>{<img
-                    src={urlFor(mainImage)
+                  <a>{
+                    <img
+                    src={Image(mainImage)
                         .height(500)
+                        .quality(80)
+                        .format('jpg')
+                        .auto('format')
                         .url()}
-                    />}</a>
+                    />
+                    }</a>
                 </Link>{' '}
               </li>
             )

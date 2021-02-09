@@ -1,10 +1,4 @@
-import imageUrlBuilder from '@sanity/image-url'
-import client from '../client'
-
-function urlFor (source) {
-  return imageUrlBuilder(client).image(source)
-}
-
+import Image from '../components/image'
 
 const Carousel = (carousel) => {
   return (
@@ -16,8 +10,10 @@ const Carousel = (carousel) => {
             <li className="uk-width-3-4">
               <div className="uk-panel">
                 <img
-                    src={urlFor(carousels)
+                    src={Image(carousels)
                         .width(500)
+                        .format('jpg')
+                        .auto('format')
                         .url()}
                     />
               </div>
