@@ -1,5 +1,5 @@
 import Head from "next/head";
-import "../css/style.css";
+import "../assets/css/style.css";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { motion } from 'framer-motion';
@@ -14,13 +14,9 @@ const MyApp = ({ Component, pageProps, router  }) => {
         <link rel="icon" type="image/png" sizes="16x16" href="https://gruhamstudio.com/favicon/favicon-16x16.png" />
         <link rel="icon" type="image/x-icon" href="https://gruhamstudio.com/favicon/favicon.ico" />
         <link rel="manifest" href="https://gruhamstudio.com/favicon/site.webmanifest" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Indie+Flower:wght@400&display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500&display=swap" rel="stylesheet" />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css"
-        />
+        <link href="/fonts/manrope.ttf" rel="stylesheet" />
+        <link href="/fonts/samarkan.ttf" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/css/uikit.min.css" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.js" />
       </Head>
       <Layout />
