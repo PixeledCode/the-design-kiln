@@ -2,22 +2,21 @@ import Head from "next/head";
 import Image from './image'
 
 const image = (img) => {
-  return (
-    <img
+  const img1 = (<img
       src={Image(img)
           .height(500)
           .format('jpg')
           .auto('format')
           .url()}
-    />
-  )
+    />)
+  return img1.props.src
 }
 
 const Seo = ({ seo }) => {
   console.log(seo)
   const fullSeo = {
     metaTitle: seo.title == undefined ? `Gruham Studio | Design & Architecture` : `${seo.title} | Gruham Studio` ,
-    shareImage: image(seo.mainImage),
+    shareImage: seo.mainImage ? image(seo.mainImage) : 'https://gruhamstudio.com/icon.png',
     metaDescription: seo.body ? seo.body[0].children[0].text.substring(0,120) 
     : 'Gruham Studio is a Design Studio Offering Design Consultancy For Architecture, Urban Design, Interior, Landscape Design And Land Development'
   }
@@ -40,9 +39,9 @@ const Seo = ({ seo }) => {
       )}
       {fullSeo.shareImage && (
         <>
-          <meta property="og:image" content={fullSeo.shareImage.props.src} key={'image'}/>
-          <meta name="twitter:image" content={fullSeo.shareImage.props.src} key={'ogimage'}/>
-          <meta name="image" content={fullSeo.shareImage.props.src} key={'twitterimage'}/>
+          <meta property="og:image" content={fullSeo.shareImage} key={'image'}/>
+          <meta name="twitter:image" content={fullSeo.shareImage} key={'ogimage'}/>
+          <meta name="image" content={fullSeo.shareImage} key={'twitterimage'}/>
         </>
       )}
       {fullSeo.article && <meta property="og:type" content="article" key={'ogarticle'}/>}
