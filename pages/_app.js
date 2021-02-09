@@ -1,4 +1,3 @@
-import App from "next/app";
 import Head from "next/head";
 import "../css/style.css";
 import Layout from "../components/layout";

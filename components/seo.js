@@ -1,7 +1,5 @@
 import Head from "next/head";
 import Image from './image'
-import BlockContent from '@sanity/block-content-to-react'
-import client from '../client'
 
 const image = (img) => {
   return (
@@ -16,12 +14,14 @@ const image = (img) => {
 }
 
 const Seo = ({ seo }) => {
+  console.log(seo)
   const fullSeo = {
     metaTitle: seo.title == undefined ? `Gruham Studio | Design & Architecture` : `${seo.title} | Gruham Studio` ,
     shareImage: image(seo.mainImage),
-    metaDescription: seo.body[0].children[0].text.substring(0,120)
-  };
-  console.log(fullSeo.metaDescription)
+    metaDescription: seo.body ? seo.body[0].children[0].text.substring(0,120) 
+    : 'Gruham Studio is a Design Studio Offering Design Consultancy For Architecture, Urban Design, Interior, Landscape Design And Land Development'
+  }
+
   return (
     <Head>
       {fullSeo.metaTitle && (
