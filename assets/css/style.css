@@ -21,6 +21,12 @@
   font-weight: 1 999;
 }
 
+@font-face {
+  font-family: 'Samarkan';
+  src: url('../../public/fonts/samarkan.TTF') format("truetype");
+  font-weight: 400;
+}
+
 html {
   overflow-y: scroll;
   font-family: 'Manrope',
