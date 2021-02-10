@@ -6,7 +6,7 @@ const Seo = ({ seo }) => {
     metaTitle: seo.title == undefined ? `Gruham Studio | Design & Architecture` : `${seo.title} | Gruham Studio` ,
     shareImage: seo.mainImage ? Images(seo.mainImage) : 'https://gruhamstudio.com/icon.png',
     metaDescription: seo.body ? seo.body[0].children[0].text.substring(0,120) 
-    : 'Gruham Studio is a Design Studio Offering Design Consultancy For Architecture, Urban Design, Interior, Landscape Design And Land Development'
+    : 'Gruham Studio is a design studio offering consultancy services for architecture, urban design, interior, landscape design and land development.'
   }
 
   return (

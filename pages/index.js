@@ -12,7 +12,7 @@ const Index = (props) => {
             slug && (
                 <Link key={slug.current} href="/post/[slug]" as={`/post/${slug.current}`}>     
                   <a>{
-                    Images(mainImage, title, 522) 
+                    Images(mainImage, title, 522)
                     }</a>
                 </Link>
             )
