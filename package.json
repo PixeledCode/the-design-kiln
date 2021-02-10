@@ -13,7 +13,6 @@
   "dependencies": {
     "@sanity/block-content-to-react": "^2.0.7",
     "@sanity/client": "^2.2.6",
-    "@sanity/image-url": "^0.140.22",
     "framer-motion": "^3.3.0",
     "groq": "^2.2.6",
     "leaflet": "^1.7.1",

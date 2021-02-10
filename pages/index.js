@@ -5,7 +5,6 @@ import Images from '../components/images'
 
 const Index = (props) => {
     const { posts = [] } = props
-    console.log(posts)
     return (
       <div className="projects uk-section uk-container uk-container-large">
         {posts.map(

@@ -1,19 +1,7 @@
 import Head from "next/head";
 import Images from './images'
 
-const image = (img) => {
-  const img1 = (<img
-      src={Image(img)
-          .height(500)
-          .format('jpg')
-          .auto('format')
-          .url()}
-    />)
-  return img1.props.src
-}
-
 const Seo = ({ seo }) => {
-  console.log(seo)
   const fullSeo = {
     metaTitle: seo.title == undefined ? `Gruham Studio | Design & Architecture` : `${seo.title} | Gruham Studio` ,
     shareImage: seo.mainImage ? Images(seo.mainImage) : 'https://gruhamstudio.com/icon.png',

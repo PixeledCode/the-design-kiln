@@ -54,10 +54,7 @@ a {
   text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-h4 {
+.article .title {
   font-family: 'Samarkan', serif;
 }
 
@@ -65,24 +62,13 @@ h4 {
 .logo {
   margin-top: 5rem;
   color: black;
-  width: 500px;
+  font-size: 4rem;
   outline: none;
   text-decoration: none;
   margin-left: 0;
   border-bottom: 3px solid black;
   cursor: pointer;
-}
-
-@media screen and (max-width: 800px) {
-  .logo {
-    width: 400px;
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .logo {
-    width: 300px;
-  }
+  text-align: center;
 }
 
 /* Navbar */
@@ -93,6 +79,18 @@ h4 {
 
 #__next .uk-navbar-container .uk-container {
   max-width: max-content;
+}
+.uk-navbar-container span:first-child{
+  font-family: 'Samarkan';
+}
+.uk-navbar-container h1 {
+  border-bottom: 2px solid black;
+}
+
+.uk-navbar-container span:nth-child(2){
+  font-weight: 200;
+  font-family: 'Manrope',
+  sans-serif;
 }
 
 div.navLinks a {
@@ -108,6 +106,24 @@ div.navLinks a {
 @media screen and (min-width: 550px) and (max-width: 800px) {
   div.navLinks a {
     font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .logo {
+    font-size: 3rem;
+  }
+  div.navLinks a {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 260px) {
+  .logo {
+    font-size: 2rem;
+  }
+  div.navLinks a {
+    font-size: 1.1rem;
   }
 }
 

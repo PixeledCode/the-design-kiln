@@ -1,18 +1,20 @@
 import Images from '../components/images'
 
-const Carousel = (carousel) => {
+const Carousel = (carousel, title) => {
   return (
     <div className="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="center: true; autoplay: true; autoplay-interval: 5000; pause-on-hover: true">
       <ul className="uk-slider-items uk-grid">
-        {carousel.props.map( carousels => {
+        {carousel.map( carousels => {
+          console.log(carousels)
           return (
             <li className="uk-width-3-4">
               <div className="uk-panel">
-                <Images url={carousels} />
+              {Images(carousels, `${title} ${carousels._key.substring(0, 3)}`) }
               </div>
             </li>
           )
-        })}
+        })
+        }
       </ul>
       <a className="uk-position-center-left uk-position-small " href="#" uk-slidenav-previous uk-slider-item="previous">
         <img src="/icons/arrowBack.svg"/>

@@ -13,14 +13,12 @@ const Post = (props) => {
     body = [],
     mainImage = ''
   } = props
-  console.log(props)
-  console.log(body)
   return (
       <div className="article">
         <div className="uk-section uk-container uk-container-xsmall">
           <div className={'mainImage'}>
           {carousel.length > 0 ?
-            <Carousel props={carousel} />
+            Carousel(carousel, title)
             : Images(mainImage, title)
           }
           </div>
