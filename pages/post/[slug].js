@@ -6,7 +6,7 @@ import Images from '../../components/images'
 
 const Post = (props) => {
   const {
-    title = 'Missing title',
+    title = 'gruham',
     location = '',
     category,
     carousel = [],
@@ -21,7 +21,7 @@ const Post = (props) => {
           <div className={'mainImage'}>
           {carousel.length > 0 ?
             <Carousel props={carousel} />
-            : <Images url={mainImage} />
+            : Images(mainImage, title)
           }
           </div>
           <h1 className="title">{title}</h1>

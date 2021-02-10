@@ -5,14 +5,15 @@ import Images from '../components/images'
 
 const Index = (props) => {
     const { posts = [] } = props
+    console.log(posts)
     return (
       <div className="projects uk-section uk-container uk-container-large">
         {posts.map(
-          ({  slug = '', mainImage = '' }) =>
+          ({  slug = '', mainImage = '', title = '' }) =>
             slug && (
                 <Link href="/post/[slug]" as={`/post/${slug.current}`}>     
                   <a>{
-                    <Images url={mainImage} />
+                    Images(mainImage, title) 
                     }</a>
                 </Link>
             )
