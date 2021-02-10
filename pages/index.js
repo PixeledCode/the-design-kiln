@@ -2,7 +2,6 @@ import Link from 'next/link'
 import groq from 'groq'
 import client from '../client'
 import Images from '../components/images'
-import { motion } from "framer-motion"
 
 const Index = (props) => {
     const { posts = [] } = props
@@ -11,10 +10,10 @@ const Index = (props) => {
         {posts.map(
           ({  slug = '', mainImage = '', title = '' }) =>
             slug && (
-                <Link key={slug.current} href="/post/[slug]" passHref as={`/post/${slug.current}`}>     
-                  <figure>{
-                    Images(mainImage, title) 
-                    }</figure>
+                <Link key={slug.current} href="/post/[slug]" as={`/post/${slug.current}`}>     
+                  <a>{
+                    Images(mainImage, title, 522) 
+                    }</a>
                 </Link>
             )
         )}

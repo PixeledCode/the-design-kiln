@@ -13,7 +13,7 @@ const Carousel = (carousel, title) => {
           return (
             <li className="uk-width-3-4">
               <div className="uk-panel">
-              {Images(carousels, `${title} ${carousels._key.substring(0, 3)}`) }
+              {Images(carousels, `${title} ${carousels._key.substring(0, 3)}`, 552) }
               </div>
             </li>
           )

@@ -29,7 +29,7 @@ const Post = (props) => {
             <motion.figure 
               initial={{ scale: 0.1, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}>
-              {Images(mainImage, title)}
+              {Images(mainImage, title, 600)}
             </motion.figure>
             
           }
