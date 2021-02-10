@@ -163,15 +163,16 @@ div.navLinks ul {
   flex-grow: 1;
 }
 
-.projects a {
+.projects figure {
   box-shadow: 0 10px 20px rgba(249, 129, 42, 0.19),
   0 6px 6px rgba(249, 129, 42, 0.23);
   transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
   margin: .5rem;
   max-width: 500px;
+  cursor: pointer;
 }
 
-.projects a:hover {
+.projects figure:hover {
   box-shadow: 0 14px 28px rgba(249, 129, 42, 0.25),
     0 10px 10px rgba(249, 129, 42, 0.22);
     transform: scale(1.01);

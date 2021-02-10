@@ -5,7 +5,6 @@ const Carousel = (carousel, title) => {
     <div className="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="center: true; autoplay: true; autoplay-interval: 5000; pause-on-hover: true">
       <ul className="uk-slider-items uk-grid">
         {carousel.map( carousels => {
-          console.log(carousels)
           return (
             <li className="uk-width-3-4">
               <div className="uk-panel">
