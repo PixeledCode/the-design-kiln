@@ -15,8 +15,6 @@ const MyApp = ({ Component, pageProps, router  }) => {
         <link rel="icon" type="image/png" sizes="16x16" href="https://gruhamstudio.com/favicon/favicon-16x16.png" />
         <link rel="icon" type="image/x-icon" href="https://gruhamstudio.com/favicon/favicon.ico" />
         <link rel="manifest" href="https://gruhamstudio.com/favicon/site.webmanifest" />
-        
-        <script src="https://cdn.jsdelivr.net/npm/uikit@3.6.16/dist/js/uikit.min.js" />
       </Head>
       <Layout >
       <Seo seo={pageProps}/>

@@ -32,7 +32,7 @@
 html {
   overflow-y: scroll;
   font-family: 'Manrope',
-  sans-serif;
+    sans-serif;
 }
 
 body::-webkit-scrollbar-track {
@@ -80,41 +80,38 @@ a {
 #__next .uk-navbar-container .uk-container {
   max-width: max-content;
 }
-.uk-navbar-container span:first-child{
+
+.uk-navbar-container span:first-child {
   font-family: 'Samarkan';
 }
+
 .uk-navbar-container h1 {
   border-bottom: 2px solid black;
 }
 
-.uk-navbar-container span:nth-child(2){
+.uk-navbar-container span:nth-child(2) {
   font-weight: 200;
   font-family: 'Manrope',
-  sans-serif;
+    sans-serif;
 }
 
 div.navLinks a {
   color: black;
-  font-size: 2rem;
+  font-size: 2.3rem;
   outline: none;
   text-decoration: none;
-  margin-left: 0;
-  margin-right: 1rem;
+  margin-left: .5rem;
+  margin-right: .5rem;
   transition: all 0.3s ease;
-}
-
-@media screen and (min-width: 550px) and (max-width: 800px) {
-  div.navLinks a {
-    font-size: 1.5rem;
-  }
 }
 
 @media screen and (max-width: 350px) {
   .logo {
     font-size: 3rem;
   }
+
   div.navLinks a {
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 }
 
@@ -122,6 +119,7 @@ div.navLinks a {
   .logo {
     font-size: 2rem;
   }
+
   div.navLinks a {
     font-size: 1.1rem;
   }
@@ -139,13 +137,13 @@ div.navLinks ul {
 
 .navLinks .active a,
 .navLinks .active a:hover {
-  color: rgba(249, 129, 42);
+  color: rgb(218, 91, 1);
   font-weight: 500;
 }
 
 .navLinks .active2 a,
 .navLinks .active2 a:hover {
-  color: rgba(249, 129, 42);
+  color: rgba(218, 91, 1);
 }
 
 /* Project Display Section Homepage */
@@ -164,8 +162,8 @@ div.navLinks ul {
 }
 
 .projects figure {
-  box-shadow: 0 10px 20px rgba(249, 129, 42, 0.19),
-  0 6px 6px rgba(249, 129, 42, 0.23);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19),
+    0 6px 6px rgba(0, 0, 0, 0.23);
   transition: all 0.3s cubic-bezier(.25, .8, .25, 1);
   margin: .5rem;
   max-width: 500px;
@@ -175,7 +173,7 @@ div.navLinks ul {
 .projects figure:hover {
   box-shadow: 0 14px 28px rgba(249, 129, 42, 0.25),
     0 10px 10px rgba(249, 129, 42, 0.22);
-    transform: scale(1.01);
+  transform: scale(1.01);
 }
 
 /* .projects img:last-child {
