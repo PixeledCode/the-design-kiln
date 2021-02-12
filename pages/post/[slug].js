@@ -66,6 +66,15 @@ const Post = (props) => {
   )
 }
 
+export async function getStaticPaths () {
+  const slugs = await client.fetch(groq`*[_type == "post"]{slug}`)
+  const paths = slugs.map((slug) => ( `/post/${slug.slug.current}`))
+  return {
+    paths,
+    fallback: false,
+  }
+}
+
 const query = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
   "name": author->name,
@@ -77,9 +86,9 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   mainImage
 }`
 
-Post.getInitialProps = async function (context) {
-  const { slug = "" } = context.query
-  return await client.fetch(query, { slug })
+export async function getStaticProps(context) {
+  const { slug = "" } = context.params
+  return { props: await client.fetch(query, { slug })  }
 }
 
 export default Post

@@ -9,9 +9,9 @@ const Carousel = (carousel, title) => {
     </Head>
     <div className="uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="center: true; autoplay: true; autoplay-interval: 5000; pause-on-hover: true">
       <ul className="uk-slider-items uk-grid">
-        {carousel.map( carousels => {
+        {carousel.map( (carousels, index) => {
           return (
-            <li className="uk-width-3-4">
+            <li className="uk-width-3-4" key={`${title} ${index}`}>
               <div className="uk-panel">
               {Images(carousels, `${title} ${carousels._key.substring(0, 3)}`, 552) }
               </div>

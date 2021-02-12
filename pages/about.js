@@ -5,14 +5,14 @@ import BlockContent from '@sanity/block-content-to-react'
 import Seo from "../components/seo";
 import { motion } from "framer-motion"
 
-const Index = (props) => {
+const About = (props) => {
     const {
     body = []
-  } = props.posts
+  } = props.about
   return (
     <>
     <article>
-      <Seo seo={props.posts}/>
+      <Seo seo={props.about}/>
       <div className="uk-section">
         <motion.div 
           initial={{ opacity: 0 }}
@@ -38,10 +38,16 @@ const Index = (props) => {
   )
 }
 
-Index.getInitialProps = async () => ({
-    posts: await client.fetch(groq`
+export async function getStaticProps(){
+    const about =  await client.fetch(groq`
       *[_type == "single" && title == "About"][0]
     `)
-})
+    return {
+      props: {
+        about
+      }
+    }
+}
 
-export default Index
+
+export default About

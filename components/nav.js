@@ -10,7 +10,6 @@ const Nav = () => {
       <div className="uk-container uk-container-xsmall">
         <Link href="/">
           <h1 className="logo"><span>Gruham </span><span>Studio</span></h1>
-          {/* <img className="logo" src="/logo.png" /> */}
         </Link>
       </div>
       <div className="navLinks uk-container uk-container-xsmall">

@@ -4,9 +4,14 @@ import "../assets/css/style.css";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import UserContext from '../components/context'
 
 
 const MyApp = ({ Component, pageProps, router  }) => {
+  const scrollRef = useRef({
+      scrollPos: 0
+  });
   return (
     <>
       <Head>
@@ -15,12 +20,16 @@ const MyApp = ({ Component, pageProps, router  }) => {
         <link rel="icon" type="image/png" sizes="16x16" href="https://gruhamstudio.com/favicon/favicon-16x16.png" />
         <link rel="icon" type="image/x-icon" href="https://gruhamstudio.com/favicon/favicon.ico" />
         <link rel="manifest" href="https://gruhamstudio.com/favicon/site.webmanifest" />
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZ0DZ5KNPL"></script>
+        <script dangerouslySetInnerHTML={{ __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-BZ0DZ5KNPL');`}}></script>
       </Head>
       <Layout >
       <Seo seo={pageProps}/>
         <motion.div initial="pageInitial" animate="pageAnimate" transition={{ delay: 0.1 }} key={router.route}
         variants={{pageInitial: {opacity: 0},pageAnimate: {opacity: 1}, }}>
-        <Component {...pageProps} />
+          <UserContext.Provider value={{ scrollRef: scrollRef }}>
+            <Component {...pageProps} />
+          </UserContext.Provider>
       </motion.div>
       </ Layout >
     </>
