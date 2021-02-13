@@ -4,6 +4,7 @@ import client from '../../client'
 import Carousel from '../../components/carousel'
 import Images from '../../components/images'
 import { motion } from "framer-motion"
+import Link from "next/link";
 
 const Post = (props) => {
   const {

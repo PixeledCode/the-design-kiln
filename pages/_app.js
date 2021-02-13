@@ -4,14 +4,10 @@ import "../assets/css/style.css";
 import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { motion } from 'framer-motion';
-import { useRef } from 'react';
-import UserContext from '../components/context'
-
+import useScrollRestoration from '../utils/scrollRestore'
 
 const MyApp = ({ Component, pageProps, router  }) => {
-  const scrollRef = useRef({
-      scrollPos: 0
-  });
+  useScrollRestoration(router);
   return (
     <>
       <Head>
@@ -24,15 +20,15 @@ const MyApp = ({ Component, pageProps, router  }) => {
         <link rel="preload" href="/fonts/samarkan.TTF" as="style" />
         <script dangerouslySetInnerHTML={{ __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-BZ0DZ5KNPL');`}}></script>
       </Head>
+
       <Layout >
       <Seo seo={pageProps}/>
         <motion.div initial="pageInitial" animate="pageAnimate" transition={{ delay: 0.1 }} key={router.route}
-        variants={{pageInitial: {opacity: 0},pageAnimate: {opacity: 1}, }}>
-          <UserContext.Provider value={{ scrollRef: scrollRef }}>
+        variants={{pageInitial: {opacity: 0}, pageAnimate: {opacity: 1}, }}>
             <Component {...pageProps} />
-          </UserContext.Provider>
       </motion.div>
       </ Layout >
+      
     </>
   );
 };
