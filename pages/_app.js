@@ -17,7 +17,7 @@ const MyApp = ({ Component, pageProps, router  }) => {
         <link rel="icon" type="image/x-icon" href="https://gruhamstudio.com/favicon/favicon.ico" />
         <link rel="manifest" href="https://gruhamstudio.com/favicon/site.webmanifest" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-BZ0DZ5KNPL"></script>
-        <link rel="preload" href="/fonts/samarkan.TTF" as="style" />
+        <link rel="preload" href="https://gruhamstudio.com/fonts/samarkan.TTF" as="style" />
         <script dangerouslySetInnerHTML={{ __html: `window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-BZ0DZ5KNPL');`}}></script>
       </Head>
 
