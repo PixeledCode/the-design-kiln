@@ -23,13 +23,15 @@ const Post = (props) => {
 
           <motion.figure 
               initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}>
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.2 }}>
               {Carousel(carousel, title)}
           </motion.figure>
             : 
             <motion.figure 
               initial={{ scale: 0.1, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}>
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ delay: 0.2 }}>
               {Images(mainImage, title, 600)}
             </motion.figure>
             
@@ -39,14 +41,14 @@ const Post = (props) => {
           <motion.h1 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
+          transition={{ delay: 0.4 }}
           className="title">{title}
           </motion.h1>
 
           <motion.div 
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
+          transition={{ delay: 0.6 }}
           className="postHeader">
             {`${category} | ${location}`}
           </motion.div>
@@ -54,7 +56,7 @@ const Post = (props) => {
           <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.6 }}>
+          transition={{ delay: 0.8 }}>
           <BlockContent
             blocks={body}
             imageOptions={{ w: 320, h: 240, fit: 'max' }}
