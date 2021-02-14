@@ -3,7 +3,7 @@ import Images from './images'
 
 const Seo = ({ seo }) => {
   const fullSeo = {
-    metaTitle: seo.title == undefined ? `Gruham Studio | Design & Architecture` : `${seo.title} | Gruham Studio` ,
+    metaTitle: seo.title === undefined ? `Gruham Studio | Design & Architecture` : `${seo.title} | Gruham Studio` ,
     shareImage: seo.mainImage ? Images(seo.mainImage) : 'https://gruhamstudio.com/icon.png',
     metaDescription: seo.body ? seo.body[0].children[0].text.substring(0,120) 
     : 'Gruham Studio is a design studio offering consultancy services for architecture, urban design, interior, landscape design and land development.'
