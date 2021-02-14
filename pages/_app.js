@@ -28,7 +28,7 @@ const MyApp = ({ Component, pageProps, router  }) => {
           startPosition={0.3}
           stopDelayMs={100}
           height="3" 
-          options={{ easing: 'ease', speed: 500, trickle: false}}/>
+          options={{ easing: 'ease', speed: 300, showSpinner: false}}/>
       <Seo seo={pageProps}/>
         <motion.div initial="pageInitial" animate="pageAnimate" transition={{ delay: 0.1 }} key={router.route}
         variants={{pageInitial: {opacity: 0}, pageAnimate: {opacity: 1}, }}>
