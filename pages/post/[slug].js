@@ -91,7 +91,7 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
 
 export async function getStaticProps(context) {
   const { slug = "" } = context.params
-  return { props: await client.fetch(query, { slug })  }
+  return { {props: await client.fetch(query, { slug })}, revalidate: 60 }
 }
 
 export default Post
