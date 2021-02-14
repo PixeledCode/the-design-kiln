@@ -5,6 +5,7 @@ import Layout from "../components/layout";
 import Seo from "../components/seo";
 import { motion } from 'framer-motion';
 import useScrollRestoration from '../utils/scrollRestore'
+import NextNprogress from 'nextjs-progressbar';
 
 const MyApp = ({ Component, pageProps, router  }) => {
   useScrollRestoration(router);
@@ -22,6 +23,12 @@ const MyApp = ({ Component, pageProps, router  }) => {
       </Head>
 
       <Layout >
+        <NextNprogress
+          color="#da5b01"
+          startPosition={0.3}
+          stopDelayMs={100}
+          height="3" 
+          options={{ easing: 'ease', speed: 500, trickle: false}}/>
       <Seo seo={pageProps}/>
         <motion.div initial="pageInitial" animate="pageAnimate" transition={{ delay: 0.1 }} key={router.route}
         variants={{pageInitial: {opacity: 0}, pageAnimate: {opacity: 1}, }}>
