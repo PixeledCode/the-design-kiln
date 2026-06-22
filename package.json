@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Portfolio Site for The Design Kiln",
   "scripts": {
-    "dev": "next",
-    "build": "next build",
+    "dev": "NODE_OPTIONS=--openssl-legacy-provider next",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider next build",
     "start": "next start"
   },
   "keywords": [],
